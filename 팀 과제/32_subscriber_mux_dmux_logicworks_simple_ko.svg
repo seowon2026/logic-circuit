@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1250" viewBox="0 0 1700 1250">
+  <defs>
+    <pattern id="smallGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    </pattern>
+    <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
+      <rect width="160" height="160" fill="url(#smallGrid)"/>
+      <path d="M 160 0 L 0 0 0 160" fill="none" stroke="#c8c8c8" stroke-width="1.6"/>
+    </pattern>
+    <style>
+      .bg { fill: #fbfbfb; }
+      .wire { stroke: #ff1717; stroke-width: 2.2; fill: none; stroke-linecap: square; stroke-linejoin: miter; }
+      .bus { stroke: #ff1717; stroke-width: 3.5; fill: none; stroke-linecap: square; stroke-linejoin: miter; }
+      .ctrl { stroke: #1d4ed8; stroke-width: 2; fill: none; stroke-dasharray: 7 5; }
+      .chip { fill: #fff; stroke: #111; stroke-width: 2.1; }
+      .pin { stroke: #111; stroke-width: 1.8; }
+      .dot { fill: #ff1717; }
+      .blueDot { fill: #1d4ed8; }
+      .title { font: 700 28px Arial, 'Malgun Gothic', sans-serif; fill: #111; }
+      .label { font: 15px Arial, 'Malgun Gothic', sans-serif; fill: #111; }
+      .small { font: 12px Arial, 'Malgun Gothic', sans-serif; fill: #222; }
+      .tiny { font: 10.5px Arial, 'Malgun Gothic', sans-serif; fill: #333; }
+      .blue { fill: #1d4ed8; }
+      .note { fill: #fffdeb; stroke: #777; stroke-width: 1.3; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1700" height="1250"/>
+  <rect width="1700" height="1250" fill="url(#grid)"/>
+
+  <text class="title" x="45" y="45">&#51;&#50;&#44032;&#51077;&#51088; &#51204;&#54868; &#51473;&#44228;&#44592; - LogicWorks &#48373;&#49324;&#50857; &#54924;&#47196;&#46020;</text>
+  <text class="label" x="45" y="72">&#44592;&#48376; &#49548;&#51088;: 8x1 MUX 5&#44060;, 1x8 DMUX 5&#44060; / &#48744;&#44036;&#49440; = &#53685;&#54868; &#49888;&#54840;, &#54028;&#46976;&#49440; = &#49440;&#53469;&#49440;</text>
+
+  <!-- Source labels -->
+  <text class="label" x="45" y="120">&#49569;&#49888; &#44032;&#51077;&#51088; &#51077;&#47141;</text>
+  <g class="small">
+    <text x="45" y="155">S00</text><text x="45" y="175">S01</text><text x="45" y="195">S02</text><text x="45" y="215">S03</text>
+    <text x="45" y="235">S04</text><text x="45" y="255">S05</text><text x="45" y="275">S06</text><text x="45" y="295">S07</text>
+    <text x="45" y="375">S08</text><text x="45" y="395">S09</text><text x="45" y="415">S10</text><text x="45" y="435">S11</text>
+    <text x="45" y="455">S12</text><text x="45" y="475">S13</text><text x="45" y="495">S14</text><text x="45" y="515">S15</text>
+    <text x="45" y="595">S16</text><text x="45" y="615">S17</text><text x="45" y="635">S18</text><text x="45" y="655">S19</text>
+    <text x="45" y="675">S20</text><text x="45" y="695">S21</text><text x="45" y="715">S22</text><text x="45" y="735">S23</text>
+    <text x="45" y="815">S24</text><text x="45" y="835">S25</text><text x="45" y="855">S26</text><text x="45" y="875">S27</text>
+    <text x="45" y="895">S28</text><text x="45" y="915">S29</text><text x="45" y="935">S30</text><text x="45" y="955">S31</text>
+  </g>
+
+  <!-- First-stage MUX chips -->
+  <g id="mux0">
+    <rect class="chip" x="150" y="125" width="125" height="190"/>
+    <text class="label" x="187" y="150">MUX0</text><text class="small" x="192" y="168">8x1</text>
+    <text class="tiny" x="158" y="192">D0</text><text class="tiny" x="158" y="212">D1</text><text class="tiny" x="158" y="232">D2</text><text class="tiny" x="158" y="252">D3</text>
+    <text class="tiny" x="158" y="272">D4</text><text class="tiny" x="158" y="292">D5</text><text class="tiny" x="158" y="312">D6</text><text class="tiny" x="158" y="332">D7</text>
+    <text class="tiny" x="205" y="305">S0 S1 S2</text><text class="tiny" x="254" y="224">Y</text>
+  </g>
+  <g id="mux1">
+    <rect class="chip" x="150" y="345" width="125" height="190"/>
+    <text class="label" x="187" y="370">MUX1</text><text class="small" x="192" y="388">8x1</text>
+    <text class="tiny" x="158" y="412">D0</text><text class="tiny" x="158" y="432">D1</text><text class="tiny" x="158" y="452">D2</text><text class="tiny" x="158" y="472">D3</text>
+    <text class="tiny" x="158" y="492">D4</text><text class="tiny" x="158" y="512">D5</text><text class="tiny" x="158" y="532">D6</text><text class="tiny" x="158" y="552">D7</text>
+    <text class="tiny" x="205" y="525">S0 S1 S2</text><text class="tiny" x="254" y="444">Y</text>
+  </g>
+  <g id="mux2">
+    <rect class="chip" x="150" y="565" width="125" height="190"/>
+    <text class="label" x="187" y="590">MUX2</text><text class="small" x="192" y="608">8x1</text>
+    <text class="tiny" x="158" y="632">D0</text><text class="tiny" x="158" y="652">D1</text><text class="tiny" x="158" y="672">D2</text><text class="tiny" x="158" y="692">D3</text>
+    <text class="tiny" x="158" y="712">D4</text><text class="tiny" x="158" y="732">D5</text><text class="tiny" x="158" y="752">D6</text><text class="tiny" x="158" y="772">D7</text>
+    <text class="tiny" x="205" y="745">S0 S1 S2</text><text class="tiny" x="254" y="664">Y</text>
+  </g>
+  <g id="mux3">
+    <rect class="chip" x="150" y="785" width="125" height="190"/>
+    <text class="label" x="187" y="810">MUX3</text><text class="small" x="192" y="828">8x1</text>
+    <text class="tiny" x="158" y="852">D0</text><text class="tiny" x="158" y="872">D1</text><text class="tiny" x="158" y="892">D2</text><text class="tiny" x="158" y="912">D3</text>
+    <text class="tiny" x="158" y="932">D4</text><text class="tiny" x="158" y="952">D5</text><text class="tiny" x="158" y="972">D6</text><text class="tiny" x="158" y="992">D7</text>
+    <text class="tiny" x="205" y="965">S0 S1 S2</text><text class="tiny" x="254" y="884">Y</text>
+  </g>
+
+  <!-- MUX input wires -->
+  <g class="wire">
+    <path d="M75 150 H150"/><path d="M75 170 H150"/><path d="M75 190 H150"/><path d="M75 210 H150"/>
+    <path d="M75 230 H150"/><path d="M75 250 H150"/><path d="M75 270 H150"/><path d="M75 290 H150"/>
+    <path d="M75 370 H150"/><path d="M75 390 H150"/><path d="M75 410 H150"/><path d="M75 430 H150"/>
+    <path d="M75 450 H150"/><path d="M75 470 H150"/><path d="M75 490 H150"/><path d="M75 510 H150"/>
+    <path d="M75 590 H150"/><path d="M75 610 H150"/><path d="M75 630 H150"/><path d="M75 650 H150"/>
+    <path d="M75 670 H150"/><path d="M75 690 H150"/><path d="M75 710 H150"/><path d="M75 730 H150"/>
+    <path d="M75 810 H150"/><path d="M75 830 H150"/><path d="M75 850 H150"/><path d="M75 870 H150"/>
+    <path d="M75 890 H150"/><path d="M75 910 H150"/><path d="M75 930 H150"/><path d="M75 950 H150"/>
+  </g>
+
+  <!-- Source group selector MUX4 -->
+  <rect class="chip" x="430" y="450" width="135" height="210"/>
+  <text class="label" x="474" y="478">MUX4</text>
+  <text class="small" x="455" y="498">8x1, 4x1&#52376;&#47100;</text>
+  <text class="tiny" x="438" y="530">D0=MUX0.Y</text>
+  <text class="tiny" x="438" y="555">D1=MUX1.Y</text>
+  <text class="tiny" x="438" y="580">D2=MUX2.Y</text>
+  <text class="tiny" x="438" y="605">D3=MUX3.Y</text>
+  <text class="tiny" x="438" y="630">D4~D7=0</text>
+  <text class="tiny" x="480" y="650">S0 S1</text>
+  <text class="tiny" x="548" y="560">Y</text>
+
+  <path class="wire" d="M275 220 H330 V530 H430"/>
+  <path class="wire" d="M275 440 H355 V555 H430"/>
+  <path class="wire" d="M275 660 H355 V580 H430"/>
+  <path class="wire" d="M275 880 H330 V605 H430"/>
+  <circle class="dot" cx="330" cy="530" r="4"/><circle class="dot" cx="355" cy="555" r="4"/>
+  <circle class="dot" cx="355" cy="580" r="4"/><circle class="dot" cx="330" cy="605" r="4"/>
+
+  <!-- Trunk -->
+  <path class="bus" d="M565 555 H760"/>
+  <rect class="note" x="620" y="520" width="90" height="55"/>
+  <text class="label" x="642" y="545">&#51473;&#44228;&#49440;</text>
+  <text class="tiny" x="633" y="563">TRUNK</text>
+
+  <!-- Destination group DMUX4 -->
+  <rect class="chip" x="760" y="450" width="145" height="210"/>
+  <text class="label" x="798" y="478">DMUX4</text>
+  <text class="small" x="775" y="498">1x8, 1x4&#52376;&#47100;</text>
+  <text class="tiny" x="768" y="535">IN=TRUNK</text>
+  <text class="tiny" x="852" y="520">Y0</text>
+  <text class="tiny" x="852" y="545">Y1</text>
+  <text class="tiny" x="852" y="570">Y2</text>
+  <text class="tiny" x="852" y="595">Y3</text>
+  <text class="tiny" x="810" y="650">S0 S1</text>
+
+  <!-- Final DMUX chips -->
+  <g id="dmux0">
+    <rect class="chip" x="1060" y="125" width="135" height="190"/>
+    <text class="label" x="1095" y="150">DMUX0</text><text class="small" x="1108" y="168">1x8</text>
+    <text class="tiny" x="1068" y="224">IN</text><text class="tiny" x="1148" y="192">Y0</text><text class="tiny" x="1148" y="212">Y1</text>
+    <text class="tiny" x="1148" y="232">Y2</text><text class="tiny" x="1148" y="252">Y3</text><text class="tiny" x="1148" y="272">Y4</text>
+    <text class="tiny" x="1148" y="292">Y5</text><text class="tiny" x="1148" y="312">Y6</text><text class="tiny" x="1148" y="332">Y7</text>
+    <text class="tiny" x="1095" y="305">S0 S1 S2</text>
+  </g>
+  <g id="dmux1">
+    <rect class="chip" x="1060" y="345" width="135" height="190"/>
+    <text class="label" x="1095" y="370">DMUX1</text><text class="small" x="1108" y="388">1x8</text>
+    <text class="tiny" x="1068" y="444">IN</text><text class="tiny" x="1148" y="412">Y0</text><text class="tiny" x="1148" y="432">Y1</text>
+    <text class="tiny" x="1148" y="452">Y2</text><text class="tiny" x="1148" y="472">Y3</text><text class="tiny" x="1148" y="492">Y4</text>
+    <text class="tiny" x="1148" y="512">Y5</text><text class="tiny" x="1148" y="532">Y6</text><text class="tiny" x="1148" y="552">Y7</text>
+    <text class="tiny" x="1095" y="525">S0 S1 S2</text>
+  </g>
+  <g id="dmux2">
+    <rect class="chip" x="1060" y="565" width="135" height="190"/>
+    <text class="label" x="1095" y="590">DMUX2</text><text class="small" x="1108" y="608">1x8</text>
+    <text class="tiny" x="1068" y="664">IN</text><text class="tiny" x="1148" y="632">Y0</text><text class="tiny" x="1148" y="652">Y1</text>
+    <text class="tiny" x="1148" y="672">Y2</text><text class="tiny" x="1148" y="692">Y3</text><text class="tiny" x="1148" y="712">Y4</text>
+    <text class="tiny" x="1148" y="732">Y5</text><text class="tiny" x="1148" y="752">Y6</text><text class="tiny" x="1148" y="772">Y7</text>
+    <text class="tiny" x="1095" y="745">S0 S1 S2</text>
+  </g>
+  <g id="dmux3">
+    <rect class="chip" x="1060" y="785" width="135" height="190"/>
+    <text class="label" x="1095" y="810">DMUX3</text><text class="small" x="1108" y="828">1x8</text>
+    <text class="tiny" x="1068" y="884">IN</text><text class="tiny" x="1148" y="852">Y0</text><text class="tiny" x="1148" y="872">Y1</text>
+    <text class="tiny" x="1148" y="892">Y2</text><text class="tiny" x="1148" y="912">Y3</text><text class="tiny" x="1148" y="932">Y4</text>
+    <text class="tiny" x="1148" y="952">Y5</text><text class="tiny" x="1148" y="972">Y6</text><text class="tiny" x="1148" y="992">Y7</text>
+    <text class="tiny" x="1095" y="965">S0 S1 S2</text>
+  </g>
+
+  <!-- DMUX4 to final DMUX inputs -->
+  <path class="wire" d="M905 520 H985 V220 H1060"/>
+  <path class="wire" d="M905 545 H1015 V440 H1060"/>
+  <path class="wire" d="M905 570 H1015 V660 H1060"/>
+  <path class="wire" d="M905 595 H985 V880 H1060"/>
+  <circle class="dot" cx="985" cy="520" r="4"/><circle class="dot" cx="1015" cy="545" r="4"/>
+  <circle class="dot" cx="1015" cy="570" r="4"/><circle class="dot" cx="985" cy="595" r="4"/>
+
+  <!-- Receiver output labels -->
+  <text class="label" x="1510" y="120">&#49688;&#49888; &#44032;&#51077;&#51088; &#52636;&#47141;</text>
+  <g class="small">
+    <text x="1530" y="155">S00</text><text x="1530" y="175">S01</text><text x="1530" y="195">S02</text><text x="1530" y="215">S03</text>
+    <text x="1530" y="235">S04</text><text x="1530" y="255">S05</text><text x="1530" y="275">S06</text><text x="1530" y="295">S07</text>
+    <text x="1530" y="375">S08</text><text x="1530" y="395">S09</text><text x="1530" y="415">S10</text><text x="1530" y="435">S11</text>
+    <text x="1530" y="455">S12</text><text x="1530" y="475">S13</text><text x="1530" y="495">S14</text><text x="1530" y="515">S15</text>
+    <text x="1530" y="595">S16</text><text x="1530" y="615">S17</text><text x="1530" y="635">S18</text><text x="1530" y="655">S19</text>
+    <text x="1530" y="675">S20</text><text x="1530" y="695">S21</text><text x="1530" y="715">S22</text><text x="1530" y="735">S23</text>
+    <text x="1530" y="815">S24</text><text x="1530" y="835">S25</text><text x="1530" y="855">S26</text><text x="1530" y="875">S27</text>
+    <text x="1530" y="895">S28</text><text x="1530" y="915">S29</text><text x="1530" y="935">S30</text><text x="1530" y="955">S31</text>
+  </g>
+
+  <!-- Final DMUX output wires -->
+  <g class="wire">
+    <path d="M1195 150 H1525"/><path d="M1195 170 H1525"/><path d="M1195 190 H1525"/><path d="M1195 210 H1525"/>
+    <path d="M1195 230 H1525"/><path d="M1195 250 H1525"/><path d="M1195 270 H1525"/><path d="M1195 290 H1525"/>
+    <path d="M1195 370 H1525"/><path d="M1195 390 H1525"/><path d="M1195 410 H1525"/><path d="M1195 430 H1525"/>
+    <path d="M1195 450 H1525"/><path d="M1195 470 H1525"/><path d="M1195 490 H1525"/><path d="M1195 510 H1525"/>
+    <path d="M1195 590 H1525"/><path d="M1195 610 H1525"/><path d="M1195 630 H1525"/><path d="M1195 650 H1525"/>
+    <path d="M1195 670 H1525"/><path d="M1195 690 H1525"/><path d="M1195 710 H1525"/><path d="M1195 730 H1525"/>
+    <path d="M1195 810 H1525"/><path d="M1195 830 H1525"/><path d="M1195 850 H1525"/><path d="M1195 870 H1525"/>
+    <path d="M1195 890 H1525"/><path d="M1195 910 H1525"/><path d="M1195 930 H1525"/><path d="M1195 950 H1525"/>
+  </g>
+
+  <!-- Select/control lines -->
+  <path class="ctrl" d="M160 1040 H275"/>
+  <path class="ctrl" d="M275 1040 V315"/>
+  <path class="ctrl" d="M275 1040 V535"/>
+  <path class="ctrl" d="M275 1040 V755"/>
+  <path class="ctrl" d="M275 1040 V975"/>
+  <text class="small blue" x="45" y="1044">SRC[2:0] - MUX0~MUX3 &#44277;&#53685; &#49440;&#53469;&#49440;</text>
+
+  <path class="ctrl" d="M430 1080 H565 V660"/>
+  <text class="small blue" x="430" y="1102">SRC[4:3] - MUX4&#51032; &#49569;&#49888; &#44536;&#47353; &#49440;&#53469;&#49440;</text>
+
+  <path class="ctrl" d="M760 1080 H905 V660"/>
+  <text class="small blue" x="760" y="1102">DST[4:3] - DMUX4&#51032; &#49688;&#49888; &#44536;&#47353; &#49440;&#53469;&#49440;</text>
+
+  <path class="ctrl" d="M1060 1040 H1195"/>
+  <path class="ctrl" d="M1195 1040 V315"/>
+  <path class="ctrl" d="M1195 1040 V535"/>
+  <path class="ctrl" d="M1195 1040 V755"/>
+  <path class="ctrl" d="M1195 1040 V975"/>
+  <text class="small blue" x="1060" y="1044">DST[2:0] - DMUX0~DMUX3 &#44277;&#53685; &#49440;&#53469;&#49440;</text>
+
+  <!-- Notes -->
+  <rect class="note" x="45" y="1140" width="760" height="70"/>
+  <text class="label" x="60" y="1167">LogicWorks&#50640;&#49436; &#44536;&#47540; &#46412; &#54645;&#49900;</text>
+  <text class="small" x="60" y="1190">MUX4&#45716; 8x1&#51060;&#51648;&#47564; D0~D3&#47564; &#49324;&#50857;&#54616;&#44256; D4~D7&#51008; 0&#51004;&#47196; &#52376;&#47532;&#54620;&#45796;.</text>
+  <text class="small" x="60" y="1208">DMUX4&#45716; 1x8&#51060;&#51648;&#47564; Y0~Y3&#47564; DMUX0~DMUX3&#47196; &#48372;&#45236;&#44256; Y4~Y7&#51008; &#49324;&#50857;&#54616;&#51648; &#50506;&#45716;&#45796;.</text>
+
+  <rect class="note" x="840" y="1140" width="780" height="70"/>
+  <text class="label" x="855" y="1167">&#49440;&#53469;&#49440; &#51221;&#47532;</text>
+  <text class="small" x="855" y="1190">SRC[4:0] = &#49569;&#49888;&#51088; &#48264;&#54840;, DST[4:0] = &#49688;&#49888;&#51088; &#48264;&#54840;</text>
+  <text class="small" x="855" y="1208">[4:3]&#51008; 4&#44060; &#44536;&#47353; &#51473; &#54616;&#45208;, [2:0]&#51008; &#44536;&#47353; &#50504;&#51032; 8&#47749; &#51473; &#54616;&#45208;&#47484; &#49440;&#53469;</text>
+</svg>

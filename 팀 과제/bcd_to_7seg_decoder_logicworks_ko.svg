@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="900" viewBox="0 0 1450 900">
+  <defs>
+    <pattern id="smallGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    </pattern>
+    <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
+      <rect width="160" height="160" fill="url(#smallGrid)"/>
+      <path d="M 160 0 L 0 0 0 160" fill="none" stroke="#c8c8c8" stroke-width="1.6"/>
+    </pattern>
+    <style>
+      .bg { fill: #fbfbfb; }
+      .wire { stroke: #ff1717; stroke-width: 2.5; fill: none; stroke-linecap: square; stroke-linejoin: miter; }
+      .ctrl { stroke: #1d4ed8; stroke-width: 2; fill: none; stroke-dasharray: 7 5; }
+      .chip { fill: #fff; stroke: #111; stroke-width: 2.2; }
+      .display { fill: #f8fafc; stroke: #111; stroke-width: 2.2; }
+      .seg { fill: none; stroke: #111; stroke-width: 11; stroke-linecap: round; }
+      .active { fill: none; stroke: #ff1717; stroke-width: 11; stroke-linecap: round; }
+      .dot { fill: #ff1717; }
+      .title { font: 700 28px Arial, 'Malgun Gothic', sans-serif; fill: #111; }
+      .label { font: 16px Arial, 'Malgun Gothic', sans-serif; fill: #111; }
+      .small { font: 13px Arial, 'Malgun Gothic', sans-serif; fill: #222; }
+      .tiny { font: 11px Arial, 'Malgun Gothic', sans-serif; fill: #333; }
+      .blue { fill: #1d4ed8; }
+      .note { fill: #fffdeb; stroke: #777; stroke-width: 1.4; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1450" height="900"/>
+  <rect width="1450" height="900" fill="url(#grid)"/>
+
+  <text class="title" x="45" y="48">BCD-to-7 SEG &#46356;&#53076;&#45908; &#48660;&#47197;&#46020;</text>
+  <text class="label" x="45" y="78">BCD 4&#48708;&#53944; &#51077;&#47141;&#51012; 7&#49464;&#44536;&#47676;&#53944; &#52636;&#47141; a~g&#47196; &#48320;&#54872;&#54616;&#45716; &#54924;&#47196;</text>
+
+  <!-- BCD input switches -->
+  <text class="label" x="55" y="145">BCD &#51077;&#47141;</text>
+  <g>
+    <rect class="chip" x="70" y="180" width="90" height="45"/>
+    <text class="label" x="88" y="208">D / 8</text>
+    <rect class="chip" x="70" y="250" width="90" height="45"/>
+    <text class="label" x="88" y="278">C / 4</text>
+    <rect class="chip" x="70" y="320" width="90" height="45"/>
+    <text class="label" x="88" y="348">B / 2</text>
+    <rect class="chip" x="70" y="390" width="90" height="45"/>
+    <text class="label" x="88" y="418">A / 1</text>
+  </g>
+
+  <text class="tiny blue" x="58" y="462">A&#44032; LSB, D&#44032; MSB</text>
+
+  <!-- Optional inverters -->
+  <text class="label" x="245" y="145">&#48152;&#51204; &#49888;&#54840;</text>
+  <g>
+    <polygon class="chip" points="260,190 260,215 295,202"/>
+    <circle cx="302" cy="202" r="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text class="small" x="315" y="207">~D</text>
+    <polygon class="chip" points="260,260 260,285 295,272"/>
+    <circle cx="302" cy="272" r="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text class="small" x="315" y="277">~C</text>
+    <polygon class="chip" points="260,330 260,355 295,342"/>
+    <circle cx="302" cy="342" r="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text class="small" x="315" y="347">~B</text>
+    <polygon class="chip" points="260,400 260,425 295,412"/>
+    <circle cx="302" cy="412" r="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text class="small" x="315" y="417">~A</text>
+  </g>
+
+  <!-- Main decoder block -->
+  <rect class="chip" x="470" y="140" width="300" height="370"/>
+  <text class="label" x="535" y="175">BCD-to-7SEG DECODER</text>
+  <text class="small" x="555" y="202">&#51077;&#47141;: D C B A</text>
+  <text class="small" x="555" y="224">&#52636;&#47141;: a b c d e f g</text>
+  <text class="tiny" x="492" y="270">D</text>
+  <text class="tiny" x="492" y="310">C</text>
+  <text class="tiny" x="492" y="350">B</text>
+  <text class="tiny" x="492" y="390">A</text>
+  <text class="tiny" x="742" y="250">a</text>
+  <text class="tiny" x="742" y="285">b</text>
+  <text class="tiny" x="742" y="320">c</text>
+  <text class="tiny" x="742" y="355">d</text>
+  <text class="tiny" x="742" y="390">e</text>
+  <text class="tiny" x="742" y="425">f</text>
+  <text class="tiny" x="742" y="460">g</text>
+
+  <!-- Input wires -->
+  <path class="wire" d="M160 202 H245"/>
+  <path class="wire" d="M160 272 H245"/>
+  <path class="wire" d="M160 342 H245"/>
+  <path class="wire" d="M160 412 H245"/>
+  <path class="wire" d="M307 202 H390 V270 H470"/>
+  <path class="wire" d="M307 272 H410 V310 H470"/>
+  <path class="wire" d="M307 342 H430 V350 H470"/>
+  <path class="wire" d="M307 412 H450 V390 H470"/>
+  <circle class="dot" cx="390" cy="270" r="4"/>
+  <circle class="dot" cx="410" cy="310" r="4"/>
+  <circle class="dot" cx="430" cy="350" r="4"/>
+  <circle class="dot" cx="450" cy="390" r="4"/>
+
+  <!-- Output bus to seven segment -->
+  <text class="label" x="850" y="145">7 SEG &#52636;&#47141;</text>
+  <path class="wire" d="M770 250 H930"/>
+  <path class="wire" d="M770 285 H950"/>
+  <path class="wire" d="M770 320 H970"/>
+  <path class="wire" d="M770 355 H990"/>
+  <path class="wire" d="M770 390 H1010"/>
+  <path class="wire" d="M770 425 H1030"/>
+  <path class="wire" d="M770 460 H1050"/>
+  <text class="small" x="790" y="243">a</text>
+  <text class="small" x="790" y="278">b</text>
+  <text class="small" x="790" y="313">c</text>
+  <text class="small" x="790" y="348">d</text>
+  <text class="small" x="790" y="383">e</text>
+  <text class="small" x="790" y="418">f</text>
+  <text class="small" x="790" y="453">g</text>
+
+  <!-- Seven segment display -->
+  <rect class="display" x="1080" y="160" width="220" height="360"/>
+  <text class="label" x="1112" y="190">7-Segment Display</text>
+  <g transform="translate(1135,225)">
+    <line class="seg" x1="30" y1="0" x2="110" y2="0"/>
+    <line class="seg" x1="120" y1="15" x2="120" y2="95"/>
+    <line class="seg" x1="120" y1="125" x2="120" y2="205"/>
+    <line class="seg" x1="30" y1="220" x2="110" y2="220"/>
+    <line class="seg" x1="15" y1="125" x2="15" y2="205"/>
+    <line class="seg" x1="15" y1="15" x2="15" y2="95"/>
+    <line class="seg" x1="30" y1="110" x2="110" y2="110"/>
+    <text class="tiny" x="65" y="-12">a</text>
+    <text class="tiny" x="132" y="58">b</text>
+    <text class="tiny" x="132" y="170">c</text>
+    <text class="tiny" x="65" y="245">d</text>
+    <text class="tiny" x="-5" y="170">e</text>
+    <text class="tiny" x="-5" y="58">f</text>
+    <text class="tiny" x="65" y="105">g</text>
+  </g>
+
+  <path class="wire" d="M930 250 H1135 V225"/>
+  <path class="wire" d="M950 285 H1255 V260"/>
+  <path class="wire" d="M970 320 H1255 V370"/>
+  <path class="wire" d="M990 355 H1135 V445"/>
+  <path class="wire" d="M1010 390 H1150 V370"/>
+  <path class="wire" d="M1030 425 H1150 V260"/>
+  <path class="wire" d="M1050 460 H1135 V335"/>
+
+  <!-- Power notes -->
+  <rect class="note" x="1010" y="580" width="320" height="85"/>
+  <text class="label" x="1030" y="610">&#49324;&#50857; &#47784;&#46300;</text>
+  <text class="small" x="1030" y="635">&#44277;&#53685; &#52880;&#49548;&#46300;: a~g = 1&#51060;&#47732; &#49464;&#44536;&#47676;&#53944; ON</text>
+  <text class="small" x="1030" y="655">&#44277;&#53685; &#50528;&#45432;&#46300;: &#52636;&#47141;&#51012; &#48152;&#51204;&#54644;&#49436; &#49324;&#50857;</text>
+
+  <!-- Truth table -->
+  <rect class="note" x="45" y="570" width="875" height="260"/>
+  <text class="label" x="65" y="600">&#51652;&#47532;&#54364;(&#44277;&#53685; &#52880;&#49548;&#46300;, 1 = ON)</text>
+  <text class="small" x="65" y="630">BCD DCBA | a b c d e f g</text>
+  <text class="small" x="65" y="655">0  0000 | 1 1 1 1 1 1 0</text>
+  <text class="small" x="65" y="678">1  0001 | 0 1 1 0 0 0 0</text>
+  <text class="small" x="65" y="701">2  0010 | 1 1 0 1 1 0 1</text>
+  <text class="small" x="65" y="724">3  0011 | 1 1 1 1 0 0 1</text>
+  <text class="small" x="65" y="747">4  0100 | 0 1 1 0 0 1 1</text>
+  <text class="small" x="380" y="655">5  0101 | 1 0 1 1 0 1 1</text>
+  <text class="small" x="380" y="678">6  0110 | 1 0 1 1 1 1 1</text>
+  <text class="small" x="380" y="701">7  0111 | 1 1 1 0 0 0 0</text>
+  <text class="small" x="380" y="724">8  1000 | 1 1 1 1 1 1 1</text>
+  <text class="small" x="380" y="747">9  1001 | 1 1 1 1 0 1 1</text>
+  <text class="small" x="65" y="790">1010~1111&#51008; BCD&#50640;&#49436; &#49324;&#50857;&#54616;&#51648; &#50506;&#51004;&#48064;&#47196; X &#46608;&#45716; &#47784;&#46160; OFF&#47196; &#52376;&#47532;&#54624; &#49688; &#51080;&#45796;.</text>
+
+  <!-- LogicWorks copy guide -->
+  <rect class="note" x="45" y="850" width="1285" height="38"/>
+  <text class="small" x="60" y="875">LogicWorks&#50640;&#49436;&#45716; BCD-to-7SEG &#46356;&#53076;&#45908; IC&#47484; &#49324;&#50857;&#54616;&#44144;&#45208;, &#50948; &#51652;&#47532;&#54364;&#47484; &#44592;&#51456;&#51004;&#47196; a~g &#47196;&#51649;&#49885;&#51012; AND/OR/NOT&#47196; &#44396;&#49457;&#54616;&#47732; &#46108;&#45796;.</text>
+</svg>
